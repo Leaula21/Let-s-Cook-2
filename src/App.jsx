@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import './App.css';
+import SearchBar from "./components/SearchBar/SearchBar.jsx"
 
 const navigation = [
   { name: 'Accueil', href: '#', current: true },
@@ -16,6 +17,7 @@ function classNames(...classes) {
 
 export default function NavBar() {
   return (
+    <div class="shadow-2xl ...">
     <Disclosure as="nav" className="bg-red-800">
       {({ open }) => (
         <>
@@ -23,7 +25,7 @@ export default function NavBar() {
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -37,7 +39,7 @@ export default function NavBar() {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
-                    src="../assets/favicon-svg.png"
+                    src="./assets/favicon-svg.png"
                     alt="Your Company"
                   />
                 </div>
@@ -48,7 +50,7 @@ export default function NavBar() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-red-900 text-white' : 'text-gray-300 hover:bg-red-700 hover:text-white',
+                          item.current ? 'bg-red-900 text-white' : 'text-white hover:bg-red-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -66,7 +68,7 @@ export default function NavBar() {
                 >
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                  <BellIcon className="h-6 w-6" aria-hidden="false" />
                 </button>
 
                 {/* Profile dropdown */}
@@ -150,5 +152,6 @@ export default function NavBar() {
         </>
       )}
     </Disclosure>
+    </div>
   )
 }
