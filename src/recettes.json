@@ -1,13 +1,13 @@
 [
   {
     "id": "recipe-01",
-    "title": "",
+    "title": "Burger Classique",
     "difficulty": 2,
     "category": "Burger",
     "description": "Un burger savoureux avec une touche classique. Ingrédients frais et un steak juteux pour une expérience culinaire inoubliable.",
-    "imageUrl": "https://source.unsplash.com/1600x900/?burger",
+    "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80",
     "date": "2024-02-22",
-    "author": "john Doe"
+    "author": "John Doe"
   },
   {
     "id": "recipe-02",
@@ -15,9 +15,9 @@
     "difficulty": 3,
     "category": "Tacos",
     "description": "Des tacos colorés et pleins de saveurs, avec une garniture riche et une sauce épicée maison.",
-    "imageUrl": "https://source.unsplash.com/1600x900/?tacos",
+    "imageUrl": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80",
     "date": "2024-02-22",
-    "author": "john Doe"
+    "author": "John Doe"
   },
   {
     "id": "recipe-03",
@@ -25,9 +25,9 @@
     "difficulty": 2,
     "category": "Pizza",
     "description": "Une pizza simple mais élégante, avec de la mozzarella fraîche, des tomates et du basilic.",
-    "imageUrl": "https://source.unsplash.com/1600x900/?pizza",
+    "imageUrl": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&q=80",
     "date": "2024-02-22",
-    "author": "john Doe"
+    "author": "John Doe"
   },
   {
     "id": "recipe-04",
@@ -35,29 +35,29 @@
     "difficulty": 3,
     "category": "Pasta",
     "description": "Un plat classique italien avec des pâtes, une sauce crémeuse au fromage, des lardons et du poivre noir.",
-    "imageUrl": "https://source.unsplash.com/1600x900/?pasta",
+    "imageUrl": "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
     "date": "2024-02-22",
-    "author": "john Doe"
+    "author": "John Doe"
   },
   {
     "id": "recipe-05",
     "title": "Salade César",
     "difficulty": 1,
-    "category": "Salad",
+    "category": "Salade",
     "description": "Une salade légère et croquante avec des morceaux de poulet grillé, des croûtons et une vinaigrette César.",
-    "imageUrl": "https://source.unsplash.com/1600x900/?salad",
+    "imageUrl": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80",
     "date": "2024-02-22",
-    "author": "john Doe"
+    "author": "John Doe"
   },
   {
     "id": "recipe-06",
-    "title": "Poulet rôti",
+    "title": "Poulet Rôti",
     "difficulty": 4,
-    "category": "Chicken",
-    "description": "Un poulet frais avec une sauce riche et une mélange de saveurs.",
-    "imageUrl": "https://source.unsplash.com/1600x900/?roasted-chicken",
+    "category": "Poulet",
+    "description": "Un poulet doré au four avec des herbes fraîches, de l'ail rôti et une sauce aux jus de cuisson.",
+    "imageUrl": "https://images.unsplash.com/photo-1598103442097-8b74394b95c9?w=800&q=80",
     "date": "2024-02-22",
-    "author": "john Doe"
+    "author": "John Doe"
   },
   {
     "id": "recipe-07",
@@ -65,58 +65,58 @@
     "difficulty": 1,
     "category": "Vegan",
     "description": "Une soupe de tomate onctueuse et réconfortante, parfaite pour les soirées froides.",
-    "imageUrl": "https://source.unsplash.com/1600x900/?tomato,soup",
+    "imageUrl": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80",
     "date": "2024-02-22",
-    "author": "john Doe"
+    "author": "John Doe"
   },
   {
     "id": "recipe-08",
-    "title": "Sushis",
+    "title": "Sushis Maison",
     "difficulty": 4,
     "category": "Sushis",
-    "description": "Des sushis frais avec une sauce riche et un mélange de saveurs.",
-    "imageUrl": "https://source.unsplash.com/1600x900/?sushi",
+    "description": "Des sushis frais préparés à la maison avec du saumon, du thon et une sauce soja maison.",
+    "imageUrl": "https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=800&q=80",
     "date": "2024-02-22",
-    "author": "john Doe"
+    "author": "John Doe"
   },
   {
     "id": "recipe-09",
     "title": "Crêpes au Chocolat",
     "difficulty": 2,
-    "category": "Pancakes",
+    "category": "Dessert",
     "description": "Des crêpes douces et moelleuses avec une garniture riche en chocolat et des fruits frais.",
-    "imageUrl": "https://source.unsplash.com/1600x900/?pancakes,chocolate",
+    "imageUrl": "https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?w=800&q=80",
     "date": "2024-02-22",
-    "author": "john Doe"
+    "author": "John Doe"
   },
   {
     "id": "recipe-10",
     "title": "Glace au Chocolat",
     "difficulty": 3,
     "category": "Glace",
-    "description": "Un fondant riche et leger, avec une crème au chocolat et une mélange de fruits frais.",
-    "imageUrl": "https://source.unsplash.com/1600x900/?icecream,Chocolate",
+    "description": "Une glace maison onctueuse au chocolat noir intense, avec des copeaux de chocolat et un coulis caramel.",
+    "imageUrl": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&q=80",
     "date": "2024-02-22",
-    "author": "john Doe"
+    "author": "John Doe"
   },
   {
     "id": "recipe-11",
     "title": "Tiramisu",
     "difficulty": 4,
-    "category": "cake",
-    "description": "Un tiramisu au fromage frais, avec une crème au mascarpone et des mélanges de sucre et de fraïcheur.",
-    "imageUrl": "https://source.unsplash.com/1600x900/?tiramisu",
+    "category": "Gâteau",
+    "description": "Un tiramisu au mascarpone aérien, avec des biscuits imbibés d'espresso et un nuage de cacao.",
+    "imageUrl": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&q=80",
     "date": "2024-02-22",
-    "author": "john Doe"
+    "author": "John Doe"
   },
   {
     "id": "recipe-12",
     "title": "Tarte au Citron",
     "difficulty": 2,
     "category": "Tarte",
-    "description": "Une tarte au citron avec une crème au citron, une mélange de sucre et de fraïcheur.",
-    "imageUrl": "https://source.unsplash.com/1600x900/?lemon-cake",
+    "description": "Une tarte au citron meringuée avec une crème acidulée et une meringue dorée bien dorée.",
+    "imageUrl": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=800&q=80",
     "date": "2024-02-22",
-    "author": "john Doe"
+    "author": "John Doe"
   }
 ]

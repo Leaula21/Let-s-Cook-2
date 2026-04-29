@@ -1,4 +1,17 @@
-/* index.css ou App.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
+h1.hero-title {
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 0.02em;
+}
+
+h2, h3, .font-heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+}

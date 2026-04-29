@@ -1,157 +1,60 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import './App.css';
-import SearchBar from "./components/SearchBar/SearchBar.jsx"
+import { useState } from 'react';
+import Navbar from './Navbar.jsx';
+import SearchBar from './components/SearchBar/SearchBar.jsx';
+import HeartButton from './components/SearchBar/HeartButton.jsx';
+import ResetButton from './components/SearchBar/ResetButton.jsx';
+import Body from './components/Body/body.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
-const navigation = [
-  { name: 'Accueil', href: '#', current: true },
-  { name: 'Recettes', href: '#', current: false },
-  { name: 'Catégories', href: '#', current: false },
-  { name: 'Conseils De Cuisine', href: '#', current: false },
-]
+export default function App() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [showFavorites, setShowFavorites] = useState(false);
+  const [favorites, setFavorites] = useState(new Set());
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+  const toggleFavorite = (id) => {
+    setFavorites(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
 
-export default function NavBar() {
+  const handleReset = () => {
+    setSearchTerm('');
+    setShowFavorites(false);
+  };
+
   return (
-    <div class="shadow-2xl ...">
-    <Disclosure as="nav" className="bg-red-800">
-      {({ open }) => (
-        <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="absolute -inset-0.5" />
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="h-8 w-auto"
-                    src="./assets/favicon-svg.png"
-                    alt="Your Company"
-                  />
-                </div>
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'bg-red-900 text-white' : 'text-white hover:bg-red-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
-                  type="button"
-                  className="relative rounded-full bg-red-800 p-1 text-white-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-white-800"
-                >
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="false" />
-                </button>
+    <div className="min-h-screen bg-red-50 flex flex-col">
+      <Navbar />
 
-                {/* Profile dropdown */}
-                <Menu as="div" className="relative ml-3">
-                  <div>
-                    <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                      <span className="absolute -inset-1.5" />
-                      <span className="sr-only">Open user menu</span>
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                      />
-                    </Menu.Button>
-                  </div>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Your Profile
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Sign out
-                          </a>
-                        )}
-                      </Menu.Item>
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
-              </div>
-            </div>
+      <div className="bg-gradient-to-br from-red-800 via-red-700 to-red-600 py-14 px-4 text-center">
+        <h1 className="hero-title text-5xl md:text-7xl text-white mb-3 drop-shadow-lg">
+          Let's Cook
+        </h1>
+        <p className="text-red-100 text-lg mb-8">
+          Découvrez nos meilleures recettes du monde entier
+        </p>
+        <div className="max-w-2xl mx-auto flex flex-col sm:flex-row gap-3">
+          <div className="flex-1">
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           </div>
+          <HeartButton showFavorites={showFavorites} setShowFavorites={setShowFavorites} favCount={favorites.size} />
+          <ResetButton onReset={handleReset} />
+        </div>
+      </div>
 
-          <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
-            </div>
-          </Disclosure.Panel>
-        </>
-      )}
-    </Disclosure>
+      <main className="flex-1">
+        <Body
+          searchTerm={searchTerm}
+          showFavorites={showFavorites}
+          favorites={favorites}
+          toggleFavorite={toggleFavorite}
+        />
+      </main>
+
+      <Footer />
     </div>
-  )
+  );
 }
